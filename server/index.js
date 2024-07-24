@@ -21,7 +21,7 @@ db.connect();
 app.get('/get/listItems', async (req,res)=> {
     const result = await db.query("SELECT * FROM todoItems");
     res.json(result.rows);
-    console.log("POST",req.body);
+    console.log("GET");
 });
 
 app.post('/post/item', async (req,res) => {

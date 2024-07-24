@@ -3,10 +3,12 @@ import React from "react";
 function Checkbox(){
     return (
     <>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-            <label class="form-check-label" for="flexCheckDefault">Done?</label>
+        <div className="form-check">
+            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+            <label className="form-check-label">Done?</label>
         </div>
     </>
     );
 }
+
+export default Checkbox;
