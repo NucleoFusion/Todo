@@ -21,7 +21,7 @@ function Home(){
                 {resultArr.map( (obj)=>{
                     return (
                         <>
-                            <Item key={obj.id} desc={obj.descr} name={obj.name} />
+                            <Item key={obj.id} id={obj.id} desc={obj.descr} name={obj.name} />
                         </>
                     );
                 })}

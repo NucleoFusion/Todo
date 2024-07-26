@@ -119,3 +119,26 @@
   align-self: center;
   height: auto;
 }
+
+.EditPage-container{
+  width: 40vw;
+  height: 50vh;
+  
+  display: grid;
+  grid-template-columns: 40vw;
+  grid-template-rows: 1fr 1fr .5fr;
+
+  box-shadow: 0 30px 40px rgb(0,0,0,1);
+  border-radius: 20px;
+
+  padding-top: 2%;
+  
+  justify-self: center;
+  align-self: center;
+
+  background-image: url(https://www.chromethemer.com/wallpapers/chromebook-wallpapers/images/960/black-stone-chromebook-wallpaper.jpg);
+}
+
+.EditPage-submit{
+  height: 70%;
+}

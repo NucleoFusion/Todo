@@ -1,5 +1,7 @@
 import React from "react";
 import Checkbox from './Checkbox';
+import EditButton from "./EditButton";
+
 
 function Item(props){
     return (
@@ -7,6 +9,7 @@ function Item(props){
             <h4>{props.name}</h4>
             <Checkbox />
             <p className="Item-paragraph">{`-${props.desc}`}</p>
+            <EditButton name={props.name} desc={props.desc} id={props.id}/>
         </div>
     )
 }

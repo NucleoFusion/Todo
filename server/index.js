@@ -29,6 +29,10 @@ app.post('/post/item', async (req,res) => {
     console.log("POST",req.body);
 });
 
+app.post('/patch/:id',(req,res)=>{
+    const id = req.params.id;
+    db.query('UPDATE todoitems SET name = $1, descr = $2 WHERE id = $3',[req.body.name,req.body.descr,req.params.id]);
+})
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port 3000`);
