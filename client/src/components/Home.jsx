@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import Item from './Item';
 import axios from "axios";
 import {Link} from 'react-router-dom';
+import $ from 'jquery';
 
 function Home(){
 
@@ -15,13 +16,22 @@ function Home(){
         getData();
       }, []);
 
+      const removeByID = async (id)=>{
+        if ($(`#item${id}`).prop('checked') === true){
+            setResultArr(resultArr.filter( (obj)=>{
+                return obj.id !== id;
+            }));
+            await axios.post(`http://localhost:3000/delete/${id}`);
+        }
+      }
+
     return (
         <div className="HomePage-container">
             <div className="listItems-container">
                 {resultArr.map( (obj)=>{
                     return (
                         <>
-                            <Item key={obj.id} id={obj.id} desc={obj.descr} name={obj.name} />
+                            <Item key={obj.id} checkboxFunction={removeByID} id={obj.id} desc={obj.descr} name={obj.name} />
                         </>
                     );
                 })}

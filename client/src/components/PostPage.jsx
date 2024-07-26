@@ -2,7 +2,7 @@ import React from "react";
 import TextInput from "./TextInput";
 import axios from 'axios';
 import $ from 'jquery';
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
 
 
 function PostPage(){
@@ -27,11 +27,10 @@ function PostPage(){
                 </div>
                 <TextInput name='name'/>
                 <TextInput name='descr'/>
-                <button className="btn btn-primary PostPage-submit-button" type="submit" onClick={postItem}>Submit</button>
+                <Link className='PostPage-submit-button' to='/' >
+                    <button className="btn btn-primary" type="submit" onClick={postItem}>Submit</button>
+                </Link>
             </form>
-            <Link to='/'>
-                <button className="btn btn-primary goto-button">Home</button>
-            </Link>
         </div>
     );
 }
